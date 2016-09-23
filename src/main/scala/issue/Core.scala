@@ -1,5 +1,5 @@
 package issue
 
 object Core {
-  val x = Sub.x * 42
+  val x = 1.01 * 42
 }
