@@ -5,6 +5,10 @@ lazy val AndroidSettings = android.Plugin.androidBuild ++ Seq(
   )
 
 lazy val root = Project(id = "root", base = file("."))
+  .settings(
+    javacOptions in Compile := (javacOptions in (core, Compile)).value,
+    scalacOptions in Compile := (scalacOptions in (core, Compile)).value
+  )
   .aggregate(core)
 
 lazy val core = Project(id = "core", base = file("core")).settings(
